@@ -15,6 +15,4 @@ const LaunchRequestHandler = {
     },
   };
 
-  module.exports = {
-    LaunchRequestHandler: LaunchRequestHandler;
-  };
+  exports.LaunchRequestHandler =  LaunchRequestHandler;

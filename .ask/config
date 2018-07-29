@@ -1,7 +1,7 @@
 {
   "deploy_settings": {
     "default": {
-      "skill_id": "",
+      "skill_id": "amzn1.ask.skill.7b557f69-342e-445b-b4ad-56b405b958e2",
       "was_cloned": false,
       "merge": {
         "manifest": {
@@ -13,6 +13,27 @@
             }
           }
         }
+      },
+      "resources": {
+        "manifest": {
+          "eTag": "f14cf022712a55c3f3f706e929f5d88c"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "edceaa72ac13757059cb768ccbdf3b67"
+          }
+        },
+        "lambda": [
+          {
+            "arn": "arn:aws:lambda:us-east-1:422224568004:function:ask-custom-Test-Skill-default",
+            "functionName": "ask-custom-Test-Skill-default",
+            "awsRegion": "us-east-1",
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "revisionId": "f698b121-ac46-4737-803a-3d78423158bc"
+          }
+        ]
       }
     }
   }

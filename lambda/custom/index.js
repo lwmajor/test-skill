@@ -3,8 +3,8 @@
 
 const Alexa = require('ask-sdk-core');
 
-const LaunchRequest = require('launch-request-handler');
-const SessionEnded = require('session-ended-handler');
+const LaunchRequest = require('./handlers/launch-request-handler');
+const SessionEnded = require('./handlers/session-ended-handler');
 
 const HelloWorldIntentHandler = {
   canHandle(handlerInput) {

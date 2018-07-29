@@ -3,20 +3,8 @@
 
 const Alexa = require('ask-sdk-core');
 
-const LaunchRequestHandler = {
-  canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
-  },
-  handle(handlerInput) {
-    const speechText = 'Welcome to the Alexa Skills Kit, you can say hello!';
-
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .reprompt(speechText)
-      .withSimpleCard('Hello World', speechText)
-      .getResponse();
-  },
-};
+const LaunchRequest = require('launch-request-handler');
+const SessionEnded = require('session-ended-handler');
 
 const HelloWorldIntentHandler = {
   canHandle(handlerInput) {
@@ -65,17 +53,6 @@ const CancelAndStopIntentHandler = {
   },
 };
 
-const SessionEndedRequestHandler = {
-  canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === 'SessionEndedRequest';
-  },
-  handle(handlerInput) {
-    console.log(`Session ended with reason: ${handlerInput.requestEnvelope.request.reason}`);
-
-    return handlerInput.responseBuilder.getResponse();
-  },
-};
-
 const ErrorHandler = {
   canHandle() {
     return true;
@@ -94,11 +71,11 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 
 exports.handler = skillBuilder
   .addRequestHandlers(
-    LaunchRequestHandler,
+    LaunchRequest.LaunchRequestHandler,
     HelloWorldIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
-    SessionEndedRequestHandler
+    SessionEnded.SessionEndedRequestHandler
   )
   .addErrorHandlers(ErrorHandler)
   .lambda();

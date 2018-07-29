@@ -14,3 +14,7 @@ const LaunchRequestHandler = {
         .getResponse();
     },
   };
+
+  module.exports = {
+    LaunchRequestHandler: LaunchRequestHandler;
+  };

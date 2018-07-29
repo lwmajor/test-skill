@@ -1,6 +1,6 @@
 const Alexa = require('ask-sdk-core');
 
-export const SessionEndedRequestHandler = {
+const SessionEndedRequestHandler = {
     canHandle(handlerInput) {
       return handlerInput.requestEnvelope.request.type === 'SessionEndedRequest';
     },
@@ -9,4 +9,8 @@ export const SessionEndedRequestHandler = {
   
       return handlerInput.responseBuilder.getResponse();
     },
+  };
+
+  module.exports = {
+    SessionEndedRequestHandler: SessionEndedRequestHandler
   };

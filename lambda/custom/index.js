@@ -3,8 +3,8 @@
 
 const Alexa = require('ask-sdk-core');
 
-const LaunchRequestHandler = require('LaunchRequestHandler');
-const SessionEndedRequestHandler = require('SessionEndedRequestHandler');
+const LaunchRequestHandler = require('./handlers/launch-request-handler');
+const SessionEndedRequestHandler = require('./handlers/session-ended-handler');
 
 const HelloWorldIntentHandler = {
   canHandle(handlerInput) {
@@ -71,11 +71,11 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 
 exports.handler = skillBuilder
   .addRequestHandlers(
-    LaunchRequestHandler,
+    LaunchRequestHandler.LaunchRequestHandler,
     HelloWorldIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
-    SessionEndedRequestHandler
+    SessionEndedRequestHandler.SessionEndedRequestHandler
   )
   .addErrorHandlers(ErrorHandler)
   .lambda();

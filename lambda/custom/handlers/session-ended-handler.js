@@ -1,5 +1,3 @@
-const Alexa = require('ask-sdk-core');
-
 const SessionEndedRequestHandler = {
     canHandle(handlerInput) {
       return handlerInput.requestEnvelope.request.type === 'SessionEndedRequest';

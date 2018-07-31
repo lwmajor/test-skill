@@ -21,7 +21,8 @@
         "interactionModel": {
           "en-US": {
             "eTag": "edceaa72ac13757059cb768ccbdf3b67"
-          }
+          },
+          "en-GB": {}
         },
         "lambda": [
           {
@@ -31,7 +32,7 @@
             "alexaUsage": [
               "custom/default"
             ],
-            "revisionId": "78da6dd2-089e-4125-bdb0-0d5cb2cf2a17"
+            "revisionId": "f1af89c4-6204-4ba3-b0c9-5e0a0ab82277"
           }
         ]
       }

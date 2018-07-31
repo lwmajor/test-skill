@@ -7,6 +7,7 @@ const LaunchRequestHandler = require('./handlers/launch-request-handler');
 const SessionEndedRequestHandler = require('./handlers/session-ended-handler');
 const CancelAndStopIntentHandler = require('./handlers/cancel-stop-intent-handler');
 const HelpIntentHandler = require('./handlers/help-intent-handler');
+const ErrorHandler = require('./handlers/error-handler');
 
 const HelloWorldIntentHandler = {
   canHandle(handlerInput) {
